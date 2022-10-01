@@ -418,6 +418,8 @@ impl Server {
             open_fn: None,
             close_fn: None,
             uri_match_fn: None,
+            enable_so_linger: false,
+            linger_timeout: 0,
         }
     }
 }
