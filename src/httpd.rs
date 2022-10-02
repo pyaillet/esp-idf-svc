@@ -7,9 +7,9 @@ use alloc::vec;
 
 use std::io;
 
-use ::anyhow::anyhow;
+use anyhow::anyhow;
 
-use ::log::{info, log, Level};
+use log::{info, log, Level};
 
 use embedded_svc::httpd::*;
 
@@ -420,7 +420,9 @@ impl Server {
             open_fn: None,
             close_fn: None,
             uri_match_fn: None,
+            #[cfg(esp_idf_version = "4.4")]
             enable_so_linger: false,
+            #[cfg(esp_idf_version = "4.4")]
             linger_timeout: 0,
         }
     }
