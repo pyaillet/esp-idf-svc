@@ -420,9 +420,17 @@ impl Server {
             open_fn: None,
             close_fn: None,
             uri_match_fn: None,
-            #[cfg(esp_idf_version = "4.4")]
+            #[cfg(all(
+                esp_idf_version = "4.4", 
+                not(esp_idf_version_patch = "1"),
+                not(esp_idf_version_patch = "2")
+            ))]
             enable_so_linger: false,
-            #[cfg(esp_idf_version = "4.4")]
+            #[cfg(all(
+                esp_idf_version = "4.4", 
+                not(esp_idf_version_patch = "1"),
+                not(esp_idf_version_patch = "2")
+            ))]
             linger_timeout: 0,
         }
     }
