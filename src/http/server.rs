@@ -10,7 +10,7 @@ use alloc::string::String;
 use alloc::sync::Arc;
 use alloc::vec::Vec;
 
-use log::{info, warn};
+use ::log::{info, warn};
 
 use embedded_svc::http::headers::content_type;
 use embedded_svc::http::server::{
@@ -907,7 +907,7 @@ pub mod ws {
     extern crate alloc;
     use alloc::sync::Arc;
 
-    use log::*;
+    use ::log::*;
 
     use embedded_svc::http::Method;
     use embedded_svc::utils::mutex::{Condvar, Mutex};

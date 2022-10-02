@@ -7,9 +7,9 @@ use alloc::vec;
 
 use std::io;
 
-use anyhow::anyhow;
+use ::anyhow::anyhow;
 
-use log::{info, log, Level};
+use ::log::{info, log, Level};
 
 use embedded_svc::httpd::*;
 
